@@ -2,6 +2,8 @@
 {
     internal class Program
     {
+        //封装，抽象不是目的，目的是封装变化。
+        //只有把变化封装了，我们的程序，才能做单一、才能做到开闭封闭
         static void Main(string[] args)
         {
             //在类中，将每一个方法都进行接口抽象，也是比较极端。所以，还是根据实际的业务流程，减少接口的封装（根据业务，进行高度抽象封装）
@@ -11,6 +13,7 @@
             //bankTeller.HandleProcess(bankClient);
 
             //没有什么包一层解决不了的，假如有再包一层
+
             #region 重构后的
             //创建存钱对象
             IBankClient bankClient = new DrawMoneyClient();  //new DepositeClient();
