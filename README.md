@@ -1,4 +1,6 @@
-- 
+
+
+
 
 
 # 设计模式 
@@ -108,7 +110,7 @@
 
 ​    `财务部只做关于财务部的事，不会做洗厕所工作，给老板按摩工作(秘书)。这个可以解析为单一职责原则。`
 
-`**根据接口隔离原则拆分接口时，首先必须满足单一职责原则`**
+`根据接口隔离原则拆分接口时，首先必须满足单一职责原则`
 
 ### 迪米特原则，**又称最少知道原则**DP（Demeter Principle）
 
@@ -228,6 +230,10 @@
 ![UML图](image/image-20230425164550125.png)
 
 
+
+[面向对象的照妖镜——UML类图绘制指南 - 姜承轩 - 博客园 (cnblogs.com)](https://www.cnblogs.com/green-jcx/p/16769300.html)
+
+[UML 类图教程 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/456759825)
 
 ## 设计模式的类型
 
@@ -458,20 +464,82 @@
 
    1. 系统扩展困难，一旦加入新功能，就必须要修改工厂逻辑。
    2. 简单工厂集合了所有创建对象的逻辑，一旦不能正常工作，会导致整个系统出现问题。
+   
+   ![image-20230427220322004](image/image-20230427220322004.png)
 
 
 
 ### 工厂方法模式（Factory Method）
 
-定义：一个用于创建对象接口，让子类决定实体化哪一个类，。工厂方法使用一个的实例化，延迟到子类。
+定义：一个用于创建对象接口，让子类决定实体化哪一个类，工厂方法使用一个的实例化，延迟到子类。
+
+![image-20230427233027115](image/image-20230427233027115.png)
+
+
 
 `抽象工厂角色:这是工厂方法模式的核心，是具体的工厂角色必须实现的接口或者必须继承的抽象类。`
 
-`具体工厂角色:它包含和具体业务逻辑有关的代码。由应用程序调用以创建对应的具体产品对象。`
+ICallFactory
+
+```c#
+public class 抽象工厂角色
+{
+    
+   抽象产品角色 Get抽象产品角色();
+}
+```
+
+
+
+`具体工厂角色:它包含和具体业务逻辑有关的代码。由应用程序调用以创建对应的具体产品对象。`  new Add();  他是【抽象工厂角色】的实现类，他继承了【抽象工厂角色】，创建了【具体产品角色类】，返回【抽象产品角色】
+
+AddFactory->SunFactory->MulFactory->DivFactory
+
+```c#
+public class 具体工厂角色:抽象工厂角色
+{
+    
+  public 抽象产品角色 Get抽象产品角色()
+  {
+      
+      return new 具体产品角色类(); 
+  }
+}
+```
+
+
+
+
 
 `抽象产品角色:它是具体产品继承的父类或者接口。`
 
+Calculator 运算类
+
+```c#
+public class 运算类
+{
+    
+   double GetResult();
+}
+```
+
+
+
  `具体产品角色类:具体工厂角色创建的对象，就是该类的实例。`
+
+ Add
+
+```c#
+public class 具体产品角色类:抽象产品角色
+{
+    
+    public double GetResult()
+    {
+        
+    }
+        
+}
+```
 
 ### 抽象工厂模式（Abstract Factory Pattern）
 
@@ -487,17 +555,175 @@
 
 `具体产品角色类:具体工厂角色创建的对象，就是该类的实例。`
 
+![image-20230426214659409](image/image-20230426214659409.png)
+
 #### 工厂模式总结
 
 简单工厂︰一个工厂类，一个产品抽象类，工厂类创建方法依据传入参数并判断，选择创建具体产品对象。
 
+```c#
+public class XXXFactory
+{
+    
+    public static xxx Create (sting x)
+    {
+         switch(x)
+         {
+              case "xx1":   
+               return xxx =new () xx1 ;
+                 case "xx2":
+               return xxx  = new () xx2;
+         }
+    }
+}
+
+XXXFactory.Create("xx1"); 
+```
+
 工厂方法︰多个工厂类，一个产品抽象类，利用多态创建不同的产品对象，避免了大量的switch-case判断。
+
+解决工厂的switch
+
+```c#
+public class 产品抽象类 {
+    
+    void  Create();
+}
+
+public class XXX1:产品抽象类
+{
+    
+    public void Create()
+    {
+       
+    }
+}
+
+public interface XXXFactory
+{
+    
+    产品抽象类 Get产品抽象类();
+}
+
+public class XXX1Factory:XXXFactory
+{
+    
+    public 产品抽象类 Get产品抽象类()
+    {
+        return new XXX1();
+    }
+}
+
+
+XXXFactory xxxFactory= new XXX1Factory();
+产品抽象类 xxx= xxxFactory.Get产品抽象类();
+xxx.Create();
+```
 
 抽象工厂︰多个工厂类，多个产品抽象类，产品子类分组，同一个工厂实现类创建同组中的不同产品，减少了工厂子类的数量。
 
+```c#
+public interface 产品抽象接口1
+{
+    void Show产品抽象接口1();
+}
+
+public interface 产品抽象接口2
+{
+    void Show产品抽象接口2();
+}
+
+
+public class  产品抽象类1:产品抽象接口1
+{
+    public void Show产品抽象接口1()
+    {
+        
+        
+    }
+}
+
+
+public class  产品抽象类2:产品抽象接口2
+{
+    public void Show产品抽象接口2()
+    {
+        
+        
+    }
+}
+
+public interface 抽象工厂
+{
+    产品抽象接口1 Get产品抽象接口1();
+    产品抽象接口2 Get产品抽象接口2();
+}
+
+public class 抽象工厂对象1-2:抽象工厂
+{
+    
+   public 产品抽象接口1 Get产品抽象接口1()
+   {
+       return new 产品抽象类1();
+   }
+   public 产品抽象接口2 Get产品抽象接口2()
+    {
+        return new 产品抽象类2();
+    }
+}
+
+抽象工厂 factory = new 抽象工厂对象1-2();
+factory.Get产品抽象接口1().Show产品抽象接口1();
+factory.Get产品抽象接口2().Show产品抽象接口2();
+```
+
+
+
 ### 建造者模式（Builder Pattern）
+
+又称生成器模式
+
+定义：
+
+在软件系统中，有时候面临着"一个复杂对象"的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。
+
+是将一个复杂对象的构建和它的表示分离，使用同样的构建过程，可以创建不同的表示。
+
+![解析图](image/image-20230427195803547.png)
+
+**注意事项：**与工厂模式的区别是：建造者模式更加关注与零件装配的顺序。
+
+建造者模式结构：
+
+1. AbstractBuilder/Builder((抽象建造者/生成器)
+   为创建一个产品对象的各个部件指定抽象接口，在该接口或者抽象类中，一般提供两种方法，第一种就是各个组件的创建方法，
+   另一类方法是对象返回方法，用于将构建完成的对象返回。
+
+2. ConcreteBuilder(具体建造者/具体生成器)
+   具体建造者实现或者继承抽象建造者,实现各个组件的创建方法和对象方法的方法。
+
+3. Product(产品)
+   被构建的复杂对象，包含多个组件。
+
+4. Director(指挥者/主管)
+   指挥者负责安排复杂对象的建造顺序。
+
+   这个类的职责就是监工
+
+5.  Client(客户端)
+
+    必须将某个建造者对象与主管类关联。 一般情况下， 你只需通过主管类构造函数的参数进行一次性关联即可。 此后主管类就能使用建造者对象完成后续所有的构造任务。 但在客户端将建造者对象传递给主管类制造方法时还有另一种方式。 在这种情况下， 你在使用主管类生产产品时每次都可以使用不同的建造者。
+
+   ![建造者](image/image-20230427163913491.png)
+
+   
+
+   ![显示图](image/image-20230427195432360.png)
+
+   [设计模式之建造者(Builder)模式 | 菜鸟教程 (runoob.com)](https://www.runoob.com/w3cnote/builder-pattern.html)
+
+   [设计模式：Builder模式 | 菜鸟教程 (runoob.com)](https://www.runoob.com/w3cnote/builder-pattern-2.html)
 
 ### 原型模式（Prototype Pattern）
 
-定义：用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
-
+定义：是用于创建重复的对象，同时又能保证性能。

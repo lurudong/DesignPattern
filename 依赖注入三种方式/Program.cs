@@ -26,6 +26,7 @@
             //在接口，类中，将要注入的服务对象，以参数的形式注入，我们称之为接口注入
             //void Drive(ICar car);
             void Drive();
+            //属性依赖
             void SetDrive(ICar car);
 
         }

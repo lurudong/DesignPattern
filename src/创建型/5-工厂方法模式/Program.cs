@@ -38,35 +38,13 @@
     //1、创建对象所有的逻辑，都集合到了一个方法中，风险比较高
     //2、现在是抽象依赖细节，我们需要细节依赖抽象
 
-    public class CallFactory
-    {
-        public static ICalculator GetCalculator(string oper)
-        {
-            ICalculator calculator = null!;
-            switch (oper)
-            {
-                case "+":
-                    calculator = new Add();
-                    break;
-                case "-":
-                    calculator = new Sub();
-                    break;
-                case "*":
-                    calculator = new Mul();
-                    break;
-                case "/":
-                    calculator = new Div();
-                    break;
-            }
-            return calculator;
 
-        }
-    }
 
 
 
     //1、把创建对象的这件事，封装成抽象
     //核心
+
     public interface ICallFactory
     {
         ICalculator GetCalculator();

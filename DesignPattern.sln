@@ -31,29 +31,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "迪米特原则_2", "迪米
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "合成复用原则", "合成复用原则\合成复用原则.csproj", "{D0B6D1D6-15BF-4077-A0B2-11EE05E119F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1-单例模式-饿汉式", "src\创建型\1-单例模式-饿汉式\1-单例模式-饿汉式.csproj", "{EE4FF56A-1C1B-414E-87A1-BD04DA24774A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1-单例模式-饿汉式", "src\创建型\1-单例模式-饿汉式\1-单例模式-饿汉式.csproj", "{EE4FF56A-1C1B-414E-87A1-BD04DA24774A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-单例模式-懒汉式", "src\创建型\2-单例模式-懒汉式\2-单例模式-懒汉式.csproj", "{A15E44C1-2DD4-4B4B-BB45-E561F6BFAE12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-单例模式-懒汉式", "src\创建型\2-单例模式-懒汉式\2-单例模式-懒汉式.csproj", "{A15E44C1-2DD4-4B4B-BB45-E561F6BFAE12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-单例模式-静态内部类", "src\创建型\3-单例模式-静态内部类\3-单例模式-静态内部类.csproj", "{678D923A-9E49-4F0C-8F13-8C956B02FF96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-单例模式-静态内部类", "src\创建型\3-单例模式-静态内部类\3-单例模式-静态内部类.csproj", "{678D923A-9E49-4F0C-8F13-8C956B02FF96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4-简单工厂模式", "src\创建型\4-简单工厂模式\4-简单工厂模式.csproj", "{2E9BFD63-1FFA-41AD-A8D3-EAA3572A132B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4-简单工厂模式", "src\创建型\4-简单工厂模式\4-简单工厂模式.csproj", "{2E9BFD63-1FFA-41AD-A8D3-EAA3572A132B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5-工厂方法模式", "src\创建型\5-工厂方法模式\5-工厂方法模式.csproj", "{656C6491-8237-4151-87B1-99173639162D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5-工厂方法模式", "src\创建型\5-工厂方法模式\5-工厂方法模式.csproj", "{656C6491-8237-4151-87B1-99173639162D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6-工厂方法-反射", "src\创建型\6-工厂方法-反射\6-工厂方法-反射.csproj", "{37AFD76B-E9EA-48F9-B00E-5C5E7675D46E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6-工厂方法-反射", "src\创建型\6-工厂方法-反射\6-工厂方法-反射.csproj", "{37AFD76B-E9EA-48F9-B00E-5C5E7675D46E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7-抽象工厂导入", "src\创建型\7-抽象工厂模式\7-抽象工厂导入.csproj", "{69A45721-678F-4F16-8E0A-439E4E68DF29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7-抽象工厂导入", "src\创建型\7-抽象工厂模式\7-抽象工厂导入.csproj", "{69A45721-678F-4F16-8E0A-439E4E68DF29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8-抽象工厂模式实现", "src\创建型\8-抽象工厂模式实现\8-抽象工厂模式实现.csproj", "{2EAC2DD8-25F4-4F76-8437-668F9904D150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8-抽象工厂模式实现", "src\创建型\8-抽象工厂模式实现\8-抽象工厂模式实现.csproj", "{2EAC2DD8-25F4-4F76-8437-668F9904D150}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9-抽象工厂-更换数据库案例", "src\创建型\9-抽象工厂-更换数据库案例\9-抽象工厂-更换数据库案例.csproj", "{23800384-48E3-49B9-B6EC-7A71B8625517}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9-抽象工厂-更换数据库案例", "src\创建型\9-抽象工厂-更换数据库案例\9-抽象工厂-更换数据库案例.csproj", "{23800384-48E3-49B9-B6EC-7A71B8625517}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10-原型模式导入", "src\创建型\10-原型模式\10-原型模式导入.csproj", "{587EDBC2-F1AA-4A21-B4EE-A4DF7455E6B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10-原型模式导入", "src\创建型\10-原型模式\10-原型模式导入.csproj", "{587EDBC2-F1AA-4A21-B4EE-A4DF7455E6B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11-原型模式实现", "src\创建型\11-原型模式实现\11-原型模式实现.csproj", "{E921B0B2-23CF-4417-96EA-237204BF2675}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11-原型模式实现", "src\创建型\11-原型模式实现\11-原型模式实现.csproj", "{E921B0B2-23CF-4417-96EA-237204BF2675}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12-简化原型模式", "src\创建型\12-简化原型模式\12-简化原型模式.csproj", "{5EDC795A-A3EA-4F5C-A595-5158ACF94822}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12-简化原型模式", "src\创建型\12-简化原型模式\12-简化原型模式.csproj", "{5EDC795A-A3EA-4F5C-A595-5158ACF94822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13-建造者模式导入", "src\创建型\13-建造者模式导入\13-建造者模式导入.csproj", "{AC6DC3D6-1096-46C0-AC82-2CA534B75195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14-建造者模式", "src\创建型\14-建造者模式\14-建造者模式.csproj", "{AB758701-8CB2-48B7-989A-64F85CE856B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +153,14 @@ Global
 		{5EDC795A-A3EA-4F5C-A595-5158ACF94822}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EDC795A-A3EA-4F5C-A595-5158ACF94822}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EDC795A-A3EA-4F5C-A595-5158ACF94822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6DC3D6-1096-46C0-AC82-2CA534B75195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6DC3D6-1096-46C0-AC82-2CA534B75195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6DC3D6-1096-46C0-AC82-2CA534B75195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6DC3D6-1096-46C0-AC82-2CA534B75195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB758701-8CB2-48B7-989A-64F85CE856B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB758701-8CB2-48B7-989A-64F85CE856B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB758701-8CB2-48B7-989A-64F85CE856B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB758701-8CB2-48B7-989A-64F85CE856B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +188,8 @@ Global
 		{587EDBC2-F1AA-4A21-B4EE-A4DF7455E6B3} = {B34D8E32-C411-4280-B269-67942BE4E9BF}
 		{E921B0B2-23CF-4417-96EA-237204BF2675} = {B34D8E32-C411-4280-B269-67942BE4E9BF}
 		{5EDC795A-A3EA-4F5C-A595-5158ACF94822} = {B34D8E32-C411-4280-B269-67942BE4E9BF}
+		{AC6DC3D6-1096-46C0-AC82-2CA534B75195} = {B34D8E32-C411-4280-B269-67942BE4E9BF}
+		{AB758701-8CB2-48B7-989A-64F85CE856B9} = {B34D8E32-C411-4280-B269-67942BE4E9BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6393284D-20BB-4610-9784-773A9404620A}
