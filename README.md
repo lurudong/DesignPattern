@@ -13,6 +13,12 @@
 
 `什么是低耦合？指的是模块之间的依赖程度。提供了更好的程序可扩展与可复用性`
 
+[深入理解设计模式（六）：原型模式 - 一指流砂~ - 博客园 (cnblogs.com)](https://www.cnblogs.com/xuwendong/p/9768441.html)
+
+[设计模式 | 菜鸟教程 (runoob.com)](https://www.runoob.com/design-pattern/design-pattern-tutorial.html)
+
+[设计模式目录：22种设计模式 (refactoringguru.cn)](https://refactoringguru.cn/design-patterns/catalog)
+
 ## 设计的原则
 
 ### 单一职责原则SRP(Single Responsibilities Principle)
@@ -162,6 +168,10 @@
 
 定义：合成复用原则是指：尽量使用合成/聚合的方式，而不是使用继承。
 
+Is A  的时候使用继承
+
+has A的时候使用合成  大雁  翅膀
+
 继承的问题：
 
 1. 破坏了系统的封装性，基类发生了改变，子类的实现也会发生改变。
@@ -186,7 +196,7 @@
 
 ![image-20230421215217369](image/image-20230421215217369.png)
 
-实现：类与接口的关系，表示类了接口
+实现：类与接口的关系，表示类实现接口
 
 ![实现](image/image-20230421220253758.png)
 
@@ -234,6 +244,8 @@
 [面向对象的照妖镜——UML类图绘制指南 - 姜承轩 - 博客园 (cnblogs.com)](https://www.cnblogs.com/green-jcx/p/16769300.html)
 
 [UML 类图教程 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/456759825)
+
+[30分钟学会UML类图 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/109655171)
 
 ## 设计模式的类型
 
@@ -467,83 +479,80 @@
    
    ![image-20230427220322004](image/image-20230427220322004.png)
 
-
+ 违反开闭原则所以， 就要使用工厂方法 。
 
 ### 工厂方法模式（Factory Method）
 
 定义：一个用于创建对象接口，让子类决定实体化哪一个类，工厂方法使用一个的实例化，延迟到子类。
 
+细节依赖抽象
+
+给每个子类对象 创建一个工厂
+
 ![image-20230427233027115](image/image-20230427233027115.png)
+
+![工厂方法](image/image-20230429201055294.png)
 
 
 
 `抽象工厂角色:这是工厂方法模式的核心，是具体的工厂角色必须实现的接口或者必须继承的抽象类。`
 
-ICallFactory
-
-```c#
-public class 抽象工厂角色
-{
-    
-   抽象产品角色 Get抽象产品角色();
-}
-```
-
-
-
-`具体工厂角色:它包含和具体业务逻辑有关的代码。由应用程序调用以创建对应的具体产品对象。`  new Add();  他是【抽象工厂角色】的实现类，他继承了【抽象工厂角色】，创建了【具体产品角色类】，返回【抽象产品角色】
-
-AddFactory->SunFactory->MulFactory->DivFactory
-
-```c#
-public class 具体工厂角色:抽象工厂角色
-{
-    
-  public 抽象产品角色 Get抽象产品角色()
-  {
-      
-      return new 具体产品角色类(); 
-  }
-}
-```
-
-
-
-
+`具体工厂角色:它包含和具体业务逻辑有关的代码。由应用程序调用以创建对应的具体产品对象。` 
 
 `抽象产品角色:它是具体产品继承的父类或者接口。`
 
-Calculator 运算类
-
-```c#
-public class 运算类
-{
-    
-   double GetResult();
-}
-```
-
-
-
  `具体产品角色类:具体工厂角色创建的对象，就是该类的实例。`
 
- Add
+**优点：**
 
-```c#
-public class 具体产品角色类:抽象产品角色
-{
-    
-    public double GetResult()
-    {
-        
-    }
-        
-}
-```
+1. 一个调用者想创建一个对象，只要知道其名称就可以了。
+
+2. 扩展性高，如果想增加一个产品，只要扩展一个工厂类就可以。 
+
+3. 屏蔽产品的具体实现，调用者只关心产品的接口。
+
+4. 用户只关系产品类工厂就可以了，无须关心创建细节。
+
+   新加入产品类时，无须修改抽象工厂和抽象产品提供的接口，无须修改客户端，也无须修改其他的具体工厂和具体产品，而只要添加一个具体工厂和具体产品就可以了
+
+**缺点：**
+
+​     每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使得系统中类的个数成倍增加，在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖。这并不是什么好事。
+
+工厂方法模式和简单工厂模式的区别
+
+**简单工厂模式（静态工厂）：**
+
+（1）工厂类负责创建的对象比较少，由于创建的对象较少，不会造成工厂方法中的业务逻辑太过复杂。
+
+（2）客户端只知道传入工厂类的参数，对于如何创建对象并不关心。
+
+ （3）当须加入新产品时， 就要修改 产品工厂类，无法做到 开闭原则
+
+**工厂方法模式：**
+
+（1）客户端不知道它所需要的对象的类。
+
+（2）抽象工厂类通过其子类来指定创建哪个对象。
 
 ### 抽象工厂模式（Abstract Factory Pattern）
 
 定义：为了缩减创建子类工厂的数量，不必给每一个产品分配一个工厂类，可以将产品进行分组，每组中的不同产品由同一个工厂类的不同方法来创建。
+
+核心：同一产品生产同一类型产品
+
+**优点：**
+
+当一个产品族中的多个对象被设计成一起工作时，它能保证客户端始终只使用同一个产品族中的对象。
+
+**缺点：**
+
+1. 产品族扩展非常困难，要增加一个系列的某一产品，既要在抽象的 Creator 里加代码，又要在具体的里面加代码。
+2.  由于采用该模式需要向应用中引入众多接口和类， 代码可能会比之前更加复杂。
+
+![抽象工厂模式](image/image-20230430130113298.png)
+
+​                                        **每个具体工厂类都对应一个特定的产品变体。**
 
  跟工厂族有点像？
 
@@ -555,29 +564,45 @@ public class 具体产品角色类:抽象产品角色
 
 `具体产品角色类:具体工厂角色创建的对象，就是该类的实例。`
 
+
+
 ![image-20230426214659409](image/image-20230426214659409.png)
+
+![image-20230430151553089](image/image-20230430151553089.png)
+
+**抽象工厂模式和工厂方法模式对比**
+
+**抽象工厂模式的定义：**为创建一组相关或相互依赖的对象提供一个接口，而且无需指定它们的具体类。
+**工厂方法模式的定义：**为某个对象提供一个接口，而且无需指定它们的具体类。
+都是子类实现接口的方法，并在子类写具体的代码。
+
+工厂方法模式中也是可以有多个具体工厂，也是可以有多个抽象产品，和多个具体工厂、具体产品类。
+
+区别是在抽象工厂接口类中，能创建几个产品对象。 
+
+抽象工厂模式的工厂能创建多个相关的产品对象，而工厂方法模式的工厂只创建一个产品对象。
 
 #### 工厂模式总结
 
 简单工厂︰一个工厂类，一个产品抽象类，工厂类创建方法依据传入参数并判断，选择创建具体产品对象。
 
 ```c#
-public class XXXFactory
+public class ProductFactory
 {
     
-    public static xxx Create (sting x)
+    public static IProduct Create (sting x)
     {
          switch(x)
          {
-              case "xx1":   
-               return xxx =new () xx1 ;
-                 case "xx2":
-               return xxx  = new () xx2;
+              case "Product1":   
+               return IProduct =new () Product1 ;
+                 case "Product1":
+               return IProduct  = new () Product2;
          }
     }
 }
 
-XXXFactory.Create("xx1"); 
+ProductFactory.Create("xx1"); 
 ```
 
 工厂方法︰多个工厂类，一个产品抽象类，利用多态创建不同的产品对象，避免了大量的switch-case判断。
@@ -585,12 +610,12 @@ XXXFactory.Create("xx1");
 解决工厂的switch
 
 ```c#
-public class 产品抽象类 {
+public interface IProduct {
     
     void  Create();
 }
 
-public class XXX1:产品抽象类
+public class Product:IProduct
 {
     
     public void Create()
@@ -599,44 +624,44 @@ public class XXX1:产品抽象类
     }
 }
 
-public interface XXXFactory
+public interface IProductFactory
 {
     
-    产品抽象类 Get产品抽象类();
+    IProduct GetIProduct();
 }
 
-public class XXX1Factory:XXXFactory
+public class ProductFactory:IProductFactory
 {
     
-    public 产品抽象类 Get产品抽象类()
+    public IProduct GetIProduct()
     {
-        return new XXX1();
+        return new Product();
     }
 }
 
 
-XXXFactory xxxFactory= new XXX1Factory();
-产品抽象类 xxx= xxxFactory.Get产品抽象类();
-xxx.Create();
+IProductFactory productFactory= new ProductFactory();
+IProduct product = productFactory.GetIProduct();
+product.Create();
 ```
 
 抽象工厂︰多个工厂类，多个产品抽象类，产品子类分组，同一个工厂实现类创建同组中的不同产品，减少了工厂子类的数量。
 
 ```c#
-public interface 产品抽象接口1
+public interface IAbastractProduct1
 {
-    void Show产品抽象接口1();
+    void ShowAbastractProduct1();
 }
 
-public interface 产品抽象接口2
+public interface IAbastractProduct2
 {
-    void Show产品抽象接口2();
+    void ShowAbastractProduct2();
 }
 
 
-public class  产品抽象类1:产品抽象接口1
+public class  AbastractProduct1:IAbastractProduct1
 {
-    public void Show产品抽象接口1()
+    public void ShowAbastractProduct1()
     {
         
         
@@ -644,40 +669,40 @@ public class  产品抽象类1:产品抽象接口1
 }
 
 
-public class  产品抽象类2:产品抽象接口2
+public class  AbastractProduct2:IAbastractProduct2
 {
-    public void Show产品抽象接口2()
+    public void ShowAbastractProduct2()
     {
         
         
     }
 }
 
-public interface 抽象工厂
+public interface IAbastractProductFactory
 {
-    产品抽象接口1 Get产品抽象接口1();
-    产品抽象接口2 Get产品抽象接口2();
+    IAbastractProduct1 GetAbastractProduct1();
+    IAbastractProduct2 GetAbastractProduct2();
 }
 
-public class 抽象工厂对象1-2:抽象工厂
+public class ProductFactory:IAbastractProductFactory
 {
     
-   public 产品抽象接口1 Get产品抽象接口1()
+   public IAbastractProduct1 GetAbastractProduct1()
    {
-       return new 产品抽象类1();
+       return new AbastractProduct1();
    }
-   public 产品抽象接口2 Get产品抽象接口2()
+   public IAbastractProduct2 GetAbastractProduct2()
     {
-        return new 产品抽象类2();
+        return new AbastractProduct2();
     }
 }
 
-抽象工厂 factory = new 抽象工厂对象1-2();
-factory.Get产品抽象接口1().Show产品抽象接口1();
-factory.Get产品抽象接口2().Show产品抽象接口2();
+IAbastractProductFactory factory = new ProductFactory();
+factory.GetAbastractProduct1().ShowAbastractProduct1();
+factory.GetAbastractProduct2().ShowAbastractProduct2();
 ```
 
-
+``工厂方法模式与抽象工厂模式都属于创建型模式，在工厂方法模式中弥补了简单工厂模式的缺陷（不符合开闭原则），而在抽象工厂模式中弥补了工厂方法模式的不足（一个工厂只能生产一种产品）。`
 
 ### 建造者模式（Builder Pattern）
 

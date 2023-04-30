@@ -5,13 +5,16 @@
         static void Main(string[] args)
         {
 
-            //创建不同品牌键盘
+            IKeyboard? keyboard = KeyBoardFactory.GetKeyBoard("Dell");
+            Console.WriteLine(keyboard);
             Console.ReadLine();
         }
 
 
     }
-
+    /// <summary>
+    /// 创建不同品牌的键盘
+    /// </summary>
     public interface IKeyboard
     {
 

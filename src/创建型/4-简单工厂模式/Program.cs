@@ -50,6 +50,7 @@
         }
     }
 
+    //工厂创建类
     public class CallFactory
     {
         public static ICalculator GetCalculator(string oper)
