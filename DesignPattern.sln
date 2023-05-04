@@ -63,13 +63,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-1适配器模式", "src\�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-2装饰器模式", "src\结构型\2-2装饰器模式\2-2装饰器模式.csproj", "{EA742144-E489-464C-8AFC-41D9F911A2A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-3代理模式", "src\结构型\2-3代理模式\2-3代理模式.csproj", "{FD42CBF8-7D24-4306-8752-ED66D51704BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-3代理模式", "src\结构型\2-3代理模式\2-3代理模式.csproj", "{FD42CBF8-7D24-4306-8752-ED66D51704BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-4代理模式应用", "src\结构型\2-4代理模式应用\2-4代理模式应用.csproj", "{B02DC5A7-3520-4697-BEF5-1BC32D2E71BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-4代理模式应用", "src\结构型\2-4代理模式应用\2-4代理模式应用.csproj", "{B02DC5A7-3520-4697-BEF5-1BC32D2E71BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-5外观模式", "src\结构型\2-5外观模式\2-5外观模式.csproj", "{353F84FE-3D3A-465D-A7CA-A1BF345F4B28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-5外观模式", "src\结构型\2-5外观模式\2-5外观模式.csproj", "{353F84FE-3D3A-465D-A7CA-A1BF345F4B28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-6桥接模式", "src\结构型\2-6桥接模式\2-6桥接模式.csproj", "{2AC220A7-7A60-4D17-AAED-66F5A9AF7581}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-6桥接模式", "src\结构型\2-6桥接模式\2-6桥接模式.csproj", "{2AC220A7-7A60-4D17-AAED-66F5A9AF7581}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-7组合模式", "src\结构型\2-7组合模式\2-7组合模式.csproj", "{9F8814AA-36BF-4783-9600-A1894E432BD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2-8享元模式", "src\结构型\2-8享元模式\2-8享元模式.csproj", "{7DE86207-765C-4AD7-8426-5A5264615571}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -197,6 +201,14 @@ Global
 		{2AC220A7-7A60-4D17-AAED-66F5A9AF7581}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AC220A7-7A60-4D17-AAED-66F5A9AF7581}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AC220A7-7A60-4D17-AAED-66F5A9AF7581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F8814AA-36BF-4783-9600-A1894E432BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8814AA-36BF-4783-9600-A1894E432BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8814AA-36BF-4783-9600-A1894E432BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8814AA-36BF-4783-9600-A1894E432BD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE86207-765C-4AD7-8426-5A5264615571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE86207-765C-4AD7-8426-5A5264615571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE86207-765C-4AD7-8426-5A5264615571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE86207-765C-4AD7-8426-5A5264615571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -232,6 +244,8 @@ Global
 		{B02DC5A7-3520-4697-BEF5-1BC32D2E71BB} = {21FD4702-6CDA-4450-98CE-8CE24429828F}
 		{353F84FE-3D3A-465D-A7CA-A1BF345F4B28} = {21FD4702-6CDA-4450-98CE-8CE24429828F}
 		{2AC220A7-7A60-4D17-AAED-66F5A9AF7581} = {21FD4702-6CDA-4450-98CE-8CE24429828F}
+		{9F8814AA-36BF-4783-9600-A1894E432BD9} = {21FD4702-6CDA-4450-98CE-8CE24429828F}
+		{7DE86207-765C-4AD7-8426-5A5264615571} = {21FD4702-6CDA-4450-98CE-8CE24429828F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6393284D-20BB-4610-9784-773A9404620A}
