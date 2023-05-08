@@ -77,13 +77,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-8享元模式", "src\结�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-1中介者模式", "src\行为型\3-1中介者模式\3-1中介者模式.csproj", "{5259E125-BE4D-430E-B8F6-55100BE177B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-2观察者模式", "src\行为型\3-2观察者模式\3-2观察者模式.csproj", "{4BFADA90-E563-4109-92DA-B0469963D3E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-2观察者模式", "src\行为型\3-2观察者模式\3-2观察者模式.csproj", "{4BFADA90-E563-4109-92DA-B0469963D3E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-3迭代器模式", "src\行为型\3-3迭代器模式\3-3迭代器模式.csproj", "{8A7B9D76-914E-4647-9E69-C06932BF8231}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-3迭代器模式", "src\行为型\3-3迭代器模式\3-3迭代器模式.csproj", "{8A7B9D76-914E-4647-9E69-C06932BF8231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-4访问者模式", "src\行为型\3-4访问者模式\3-4访问者模式.csproj", "{E7703901-488F-4D32-89EB-FBD632C37EDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-4访问者模式", "src\行为型\3-4访问者模式\3-4访问者模式.csproj", "{E7703901-488F-4D32-89EB-FBD632C37EDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-5访问者模式实现", "src\行为型\3-5访问者模式实现\3-5访问者模式实现.csproj", "{013767AC-B683-4D50-9098-43E72C887B29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-5访问者模式实现", "src\行为型\3-5访问者模式实现\3-5访问者模式实现.csproj", "{013767AC-B683-4D50-9098-43E72C887B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-6责任链模式", "src\行为型\3-6责任链模式\3-6责任链模式.csproj", "{8BCC53D9-FC7D-4237-9BEE-A6341B6CAD69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-7责任链模式实现", "src\行为型\3-7责任链模式实现\3-7责任链模式实现.csproj", "{0DD12430-A0CC-438B-8869-9D7C6AE10968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3-8策略模式", "src\行为型\3-8策略模式\3-8策略模式.csproj", "{43A8E5B2-BD7C-46A9-8E8D-C752F2A38F29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -239,6 +245,18 @@ Global
 		{013767AC-B683-4D50-9098-43E72C887B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{013767AC-B683-4D50-9098-43E72C887B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{013767AC-B683-4D50-9098-43E72C887B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BCC53D9-FC7D-4237-9BEE-A6341B6CAD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BCC53D9-FC7D-4237-9BEE-A6341B6CAD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BCC53D9-FC7D-4237-9BEE-A6341B6CAD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BCC53D9-FC7D-4237-9BEE-A6341B6CAD69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD12430-A0CC-438B-8869-9D7C6AE10968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD12430-A0CC-438B-8869-9D7C6AE10968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD12430-A0CC-438B-8869-9D7C6AE10968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD12430-A0CC-438B-8869-9D7C6AE10968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43A8E5B2-BD7C-46A9-8E8D-C752F2A38F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A8E5B2-BD7C-46A9-8E8D-C752F2A38F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A8E5B2-BD7C-46A9-8E8D-C752F2A38F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A8E5B2-BD7C-46A9-8E8D-C752F2A38F29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -281,6 +299,9 @@ Global
 		{8A7B9D76-914E-4647-9E69-C06932BF8231} = {A668562C-B7D1-4F65-B6F8-8B44D91C5813}
 		{E7703901-488F-4D32-89EB-FBD632C37EDC} = {A668562C-B7D1-4F65-B6F8-8B44D91C5813}
 		{013767AC-B683-4D50-9098-43E72C887B29} = {A668562C-B7D1-4F65-B6F8-8B44D91C5813}
+		{8BCC53D9-FC7D-4237-9BEE-A6341B6CAD69} = {A668562C-B7D1-4F65-B6F8-8B44D91C5813}
+		{0DD12430-A0CC-438B-8869-9D7C6AE10968} = {A668562C-B7D1-4F65-B6F8-8B44D91C5813}
+		{43A8E5B2-BD7C-46A9-8E8D-C752F2A38F29} = {A668562C-B7D1-4F65-B6F8-8B44D91C5813}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6393284D-20BB-4610-9784-773A9404620A}
