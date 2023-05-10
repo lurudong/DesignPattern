@@ -4,10 +4,12 @@
     {
         static void Main(string[] args)
         {
-            AbstractCustomer customer1 = CustomerFactory.GetCustomer("Rob");
-            AbstractCustomer customer2 = CustomerFactory.GetCustomer("Bob");
-            Console.WriteLine(customer1.GetName());
-            Console.WriteLine(customer2.GetName());
+            //AbstractCustomer customer1 = CustomerFactory.GetCustomer("Rob");
+            //AbstractCustomer customer2 = CustomerFactory.GetCustomer("Bob");
+            //Console.WriteLine(customer1.GetName());
+            //Console.WriteLine(customer2.GetName());
+            Client client = new Client();
+            client.DoSomething(new NullMyObject());
             Console.ReadLine();
         }
     }
@@ -66,6 +68,37 @@
                 }
             }
             return new NullCustomer();
+        }
+    }
+
+
+
+    public interface IMyObject
+    {
+        void DoSomething();
+    }
+
+    public class MyObject : IMyObject
+    {
+        public void DoSomething()
+        {
+            Console.WriteLine("MyObject.DoSomething()");
+        }
+    }
+
+    public class NullMyObject : IMyObject
+    {
+        public void DoSomething()
+        {
+            // 空实现
+        }
+    }
+
+    public class Client
+    {
+        public void DoSomething(IMyObject myObject)
+        {
+            myObject.DoSomething();
         }
     }
 }

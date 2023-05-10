@@ -15,6 +15,10 @@
 
 [设计模式目录：22种设计模式 (refactoringguru.cn)](https://refactoringguru.cn/design-patterns/catalog)
 
+代码地址：
+
+[lurudong/DesignPattern: 设计模式 (github.com)](https://github.com/lurudong/DesignPattern)
+
 ## 设计的原则
 
 ### 单一职责原则SRP(Single Responsibilities Principle)
@@ -57,7 +61,7 @@
 只有把变化封装了，我们的程序，才能做单一、才能做到开闭封闭
 ```
 
-### **依赖倒转原则DIP（Dependence Inversion Principle）**
+### **依赖倒置原则DIP（Dependence Inversion Principle）**
 
 **（依赖注入）**
 
@@ -74,7 +78,7 @@
 
    解：
 
-   什么是高层模块，什么是低层模块，（高用者）是高层，（被调用者）是低层，这两个模块应该依赖抽象
+   什么是高层模块，什么是低层模块，（调用者）是高层，（被调用者）是低层，这两个模块应该依赖抽象
 
 ### **里氏代换原则LSP（Liskov Substitution Principle）**
 
@@ -1430,6 +1434,4 @@ ConcreteState:
 
 意图：
 
-在空对象模式（Null Object Pattern）中，一个空对象取代 NULL 对象实例的检查。Null 对象不是检查空值，而是反应一个不做任何动作的关系。这样的 Null 对象也可以在数据不可用的时候提供默认的行为。
-
-在空对象模式中，我们创建一个指定各种要执行的操作的抽象类和扩展该类的实体类，还创建一个未对该类做任何实现的空对象类，该空对象类将无缝地使用在需要检查空值的地方。
+C# 中的空对象模式（Null Object Pattern）是一种设计模式，它的目的是为了解决空引用的问题。当我们使用一个对象时，如果这个对象是 null，那么我们就需要进行一些额外的判断，以避免空引用异常。而空对象模式则通过提供一个“无意义”的空对象来解决这个问题。
