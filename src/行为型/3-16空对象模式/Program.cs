@@ -4,101 +4,52 @@
     {
         static void Main(string[] args)
         {
-            //AbstractCustomer customer1 = CustomerFactory.GetCustomer("Rob");
-            //AbstractCustomer customer2 = CustomerFactory.GetCustomer("Bob");
-            //Console.WriteLine(customer1.GetName());
-            //Console.WriteLine(customer2.GetName());
-            Client client = new Client();
-            client.DoSomething(new NullMyObject());
+
+            Person person = new Person();
+            person.Hear(new Dog());
+            person.Hear(new NullAnimal());
             Console.ReadLine();
         }
     }
 
-    public abstract class AbstractCustomer
-    {
-        protected string Name { get; set; }
 
-        public abstract bool IsNull();
-        public abstract string GetName();
+
+
+    /// <summary>
+    /// 定义动物接口
+    /// </summary>
+    public interface IAnimal
+    {
+        public void MakeSound();
     }
 
-    public class RealCustomer : AbstractCustomer
+    //定义一个小狗
+    public class Dog : IAnimal
     {
-        public RealCustomer(string name)
+        public void MakeSound()
         {
-            Name = name;
-        }
-
-        public override string GetName()
-        {
-            return Name;
-        }
-
-        public override bool IsNull()
-        {
-            return false;
+            Console.WriteLine("Wang Wang Wang!");
         }
     }
 
-    public class NullCustomer : AbstractCustomer
+    public class Person
     {
-
-        public override string GetName()
+        //听到动物叫声
+        public void Hear(IAnimal animal)
         {
-            return "客户数据中不可用";
-        }
-
-        public override bool IsNull()
-        {
-
-            return true;
-        }
-    }
-
-    public class CustomerFactory
-    {
-        public static string[] _names = new[] { "Rob", "Joe", "Julie" };
-        public static AbstractCustomer GetCustomer(string name)
-        {
-            for (int i = 0; i < _names.Length; i++)
+            if (animal != null)
             {
-                if (_names[i].Equals(name, StringComparison.OrdinalIgnoreCase))
-                {
-                    return new RealCustomer(name);
-                }
+                animal.MakeSound();
             }
-            return new NullCustomer();
         }
+
     }
 
-
-
-    public interface IMyObject
+    public class NullAnimal : IAnimal
     {
-        void DoSomething();
-    }
-
-    public class MyObject : IMyObject
-    {
-        public void DoSomething()
+        public void MakeSound()
         {
-            Console.WriteLine("MyObject.DoSomething()");
-        }
-    }
 
-    public class NullMyObject : IMyObject
-    {
-        public void DoSomething()
-        {
-            // 空实现
-        }
-    }
-
-    public class Client
-    {
-        public void DoSomething(IMyObject myObject)
-        {
-            myObject.DoSomething();
         }
     }
 }
