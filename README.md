@@ -324,6 +324,8 @@
 
 这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。
 
+![单例](image/image-20230528205704017.png)
+
 注：
 
 1、单例类只能有一个实例。
@@ -458,6 +460,26 @@
 ```
 
 5、可以使用c#Lazy类
+
+Lazy对象是线程安全的。在多线程方案中，访问线程安全 Lazy 对象的 Value 属性的第一个线程会为所有线程上的所有后续访问初始化该属性，并且所有线程共享相同的数据。
+
+```c#
+
+public class Singleton
+{
+    public static Lazy<Singleton> lazySingletonInstance = new Lazy<Singleton>(() => new Singleton());
+
+    private Singleton() { }
+
+    public static Singleton GetInstance
+    {
+        get
+        {
+            return lazySingletonInstance.Value;
+        }
+    }
+}
+```
 
 [C# 使用Lazy 懒加载 - WmW - 博客园 (cnblogs.com)](https://www.cnblogs.com/luludongxu/p/15244159.html)
 
