@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+
+
             //我们要访问的对象集合
             EmployeeList employeeList = new EmployeeList();
 
